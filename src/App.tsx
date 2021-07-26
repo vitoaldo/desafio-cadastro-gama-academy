@@ -18,7 +18,7 @@ function App() {
     if(regexCEP.test(cep)){
       let valores = Promise.resolve(carregarCEP());
       let Clientes = localStorage.getItem("clientes");
-      console.log(valores,Clientes);
+      console.log(valores,Clientes, nomeCliente);
     }
   }
 
