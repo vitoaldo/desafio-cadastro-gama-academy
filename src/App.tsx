@@ -16,7 +16,9 @@ function App() {
   function cadastrarCliente(){
     const regexCEP = /^[0-9]{8}$/;
     if(regexCEP.test(cep)){
+      let valores = Promise.resolve(carregarCEP());
       let Clientes = localStorage.getItem("clientes");
+      console.log(valores,Clientes);
     }
   }
 
@@ -46,7 +48,7 @@ function App() {
       </nav>
       <main>
         <input onChange={(e) => (nomeCliente = e.target.value)} type="text" placeholder="Nome do cliente"></input>
-        <input onChange={(e) => (nomeCliente = e.target.value)} type="text" placeholder="CEP do cliente"></input>
+        <input onChange={(e) => (cep = e.target.value)} type="text" placeholder="CEP do cliente"></input>
         <button type="button"
 						onClick={cadastrarCliente}>Cadastrar!</button>
       </main>
